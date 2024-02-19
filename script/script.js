@@ -3,19 +3,19 @@
 const seatBtn = document.getElementsByClassName("seat-btn");
 let count = 0;
 
+        
 
 for(const btn of seatBtn){
     btn.addEventListener("click", function(e){
         count = count + 1;
-        if(count => 4){
-            alert("djsflkj");
-            return;
-        }
+
+        
 
 
         const nameShow = e.target.parentNode.childNodes[0].innerText;
-        const priceShow = parseInt(500);
+        const priceShow = parseInt(550);
         
+
         
         const liCreatContainer = document.getElementById("li-creat-container"); 
         const li = document.createElement('li');
@@ -29,7 +29,7 @@ for(const btn of seatBtn){
         li.appendChild(p2);
         li.appendChild(p3);
         li.style.display = "flex";
-        li.style.gap = "135px";
+        li.style.gap = "160px";
         liCreatContainer.appendChild(li);
 
         const totalCost = document.getElementById("total-cost").innerText;
@@ -42,18 +42,19 @@ for(const btn of seatBtn){
         const convertTotalSeat = parseInt(totalSeat);
         const multiple = convertTotalSeat - 1 ;
         document.getElementById('total-seat').innerText = multiple;
-        // if(multiple =< 4)
-        // if(convertTotalSeat - parseInt(totalSeat) < 0){
-        //     alert('please go to next bus');
-        //     return
-        // }
-
-
-
+     
+        const grandTotalCost = document.getElementById("grand-total-cost").innerText;
+        const convertGrandTotalCost = parseInt(grandTotalCost);
+        const sum2 = convertGrandTotalCost + parseInt(priceShow);
+        document.getElementById("grand-total-cost").innerText = sum2;
+        
 
         setEnnerText("set-count", count);
+       
+
     });
 
     
 }
+
 
