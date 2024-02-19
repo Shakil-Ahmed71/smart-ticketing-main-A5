@@ -9,14 +9,9 @@ for(const btn of seatBtn){
     btn.addEventListener("click", function(e){
         count = count + 1;
 
-        
-
-
         const nameShow = e.target.parentNode.childNodes[0].innerText;
         const priceShow = parseInt(550);
-        
-
-        
+           
         const liCreatContainer = document.getElementById("li-creat-container"); 
         const li = document.createElement('li');
         const p = document.createElement('p');
@@ -29,8 +24,9 @@ for(const btn of seatBtn){
         li.appendChild(p2);
         li.appendChild(p3);
         li.style.display = "flex";
-        li.style.gap = "160px";
+        li.style.justifyContent = "space-between";
         liCreatContainer.appendChild(li);
+
 
         const totalCost = document.getElementById("total-cost").innerText;
         const convertTotalCost = parseInt(totalCost);
@@ -49,9 +45,10 @@ for(const btn of seatBtn){
         document.getElementById("grand-total-cost").innerText = sum2;
         
 
+        e.target.parentNode.style.backgroundColor = "#1DD100";
+        e.target.setAttribute("disable", true);
         setEnnerText("set-count", count);
        
-
     });
 
     
